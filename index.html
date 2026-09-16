@@ -28,6 +28,12 @@
       }
     }
 
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       background: var(--bg);
@@ -35,8 +41,22 @@
       font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
       display: flex;
       justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      min-height: 100dvh;
       padding: 80px 24px;
       transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    /* 移动端：收窄内边距，内容依然保持居中 */
+    @media (max-width: 640px) {
+      body {
+        padding: 32px 20px;
+      }
+
+      .card {
+        padding: 28px 20px;
+      }
     }
 
     .page {
@@ -163,3 +183,4 @@
   </div>
 </body>
 </html>
+<!-- （注：内容由AI生成） -->
